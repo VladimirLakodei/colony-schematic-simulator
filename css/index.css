@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font: normal 16px 'Roboto', sans-serif;
+    background-color: #eee;
+}
+
+#game {
+    padding: 3rem;
+    text-align: center
+}
