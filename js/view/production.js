@@ -1,15 +1,20 @@
-export default class View {
+export default class ViewProduction {
     constructor (root) {
         this.root = root;
-        this.productionElements = '';
     }
 
-    renderProduction() {
+    renderProduction(data) {
         const productionWrapper = document.createElement('ul');
 
+        let productionElements = '';
+
         productionWrapper.classList.add('production');
-        
-        productionWrapper.innerHTML = this.productionElements;
+
+        for (let key in data) {
+            productionElements += this.createProductionElement(data[key]);
+        }
+
+        productionWrapper.innerHTML = productionElements;
 
         this.root.appendChild(productionWrapper);
     }
@@ -33,7 +38,7 @@ export default class View {
         </li>
         `;
 
-        this.productionElements += productionElement;
+        return productionElement;
     }
 
     createProductionCost(data) {
