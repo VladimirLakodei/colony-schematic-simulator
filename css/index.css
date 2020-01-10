@@ -4,7 +4,37 @@ body {
     background-color: #eee;
 }
 
+ul, ol {
+    padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
 #game {
     padding: 3rem;
     text-align: center
+}
+
+.production__element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.production__control {
+    width: 50px;
+    height: 50px;
+}
+
+.production__inner {
+    display: flex;
+}
+
+.production__image {
+    display: block;
+    width: 150px;
+    height: 150px;
 }

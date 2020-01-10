@@ -6,4 +6,4 @@ const root = document.querySelector('#game');
 
 const model = new Model();
 const view = new View(root);
-const controller = new Controller(game, model);
+const controller = new Controller(model, view);
