@@ -1,4 +1,4 @@
-import Production from './controller/production.js';
+import Production from './production/controller.js';
 
 export default class Controller {
     constructor(root) {

@@ -26,9 +26,7 @@ export default class ViewProduction {
             <div class="production__inner">
                 <img class="production__image" src="img/production/${data.image}">
                 <div class="production__inner">
-                    <div class="production__cost">
-                        <span></span>
-                    </div>
+                    <div class="production__cost">${this.createProductionCost(data)}</div>
                     <div class="production__availability"></div>
                     <div class="production__consumption"></div>
                     <div class="production__product"></div>
