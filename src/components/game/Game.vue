@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <Production />
+    <Production :language="language" />
   </div>
 </template>
 
@@ -11,6 +11,13 @@ export default {
   name: "Game",
   components: {
     Production
+  },
+  props: {
+    language: {
+      type: String,
+      required: false,
+      default: 'en'
+    }
   },
 };
 </script>

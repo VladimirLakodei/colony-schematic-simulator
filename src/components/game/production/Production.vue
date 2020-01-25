@@ -1,6 +1,6 @@
 <template>
   <ul class="production">
-    <Item v-for="item in prodaction" :data="item" :key="item.id" />
+    <Item v-for="item in prodaction" :data="item" :language="language" :key="item.id" />
   </ul>
 </template>
 
@@ -13,9 +13,15 @@ export default {
   components: {
     Item
   },
+  props: {
+    language: {
+      type: String,
+      required: true,
+    }
+  },
   data() {
     return {
-      prodaction: {}
+      prodaction: {},
     };
   },
   created() {

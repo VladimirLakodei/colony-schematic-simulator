@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <Game />
+    <div>
+      <select v-model="language">
+        <option v-for="item in languageList" :key="item">{{item}}</option>
+      </select>
+    </div>
+    <Game :language="language"/>
   </div>
 </template>
 
@@ -11,7 +16,13 @@ export default {
   name: "app",
   components: {
     Game
-  }
+  },
+  data() {
+    return {
+      language: 'en',
+      languageList: ['en', 'ru']
+    };
+  },
 };
 </script>
 
