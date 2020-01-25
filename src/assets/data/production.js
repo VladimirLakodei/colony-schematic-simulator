@@ -7,13 +7,14 @@ export default {
 
         },
         product: {
-            log: 25
+            board: 25
         },
         image: 'lumberjack_camp.jpg',
         name: {
             en: 'lumberjack camp',
             ru: 'лагерь лесорубов'
         },
+        id: 'lumberjack_camp'
     },
     sawmill: {
         cost: {
@@ -30,5 +31,6 @@ export default {
             en: 'sawmill',
             ru: 'лесопилка'
         },
+        id: 'sawmill'
     }
 }
