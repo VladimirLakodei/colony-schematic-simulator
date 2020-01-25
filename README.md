@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+### Test build in your local domain
+```
+serve -s dist
+```
+
 ### Lints and fixes files
 ```
 npm run lint
