@@ -1,13 +1,17 @@
 export default {
     lumberjack_camp: {
         cost: {
-            board: 100
+            board: 100,
+            log: 20
+        },
+        sale: {
+            board: 50
         },
         consumption: {
 
         },
         product: {
-            board: 25
+            log: 25
         },
         image: 'lumberjack_camp.jpg',
         name: {
@@ -19,6 +23,9 @@ export default {
     sawmill: {
         cost: {
             board: 200
+        },
+        sale: {
+            board: 100
         },
         consumption: {
             log: 25

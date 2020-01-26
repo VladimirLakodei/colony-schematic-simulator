@@ -1,12 +1,17 @@
 <template>
   <ul class="production">
-    <Item v-for="item in prodaction" :data="item" :language="language" :key="item.id" />
+    <Item v-for="item in prodaction" 
+      :resources="resources"
+      :prodaction="item" 
+      :language="language" 
+      :key="item.id" />
   </ul>
 </template>
 
 <script>
 import Item from "./Item.vue";
-import Data from "../../../assets/data/production.js";
+import Resources from "../../../assets/data/resources.js";
+import Prodaction from "../../../assets/data/production.js";
 
 export default {
   name: "Production",
@@ -21,16 +26,21 @@ export default {
   },
   data() {
     return {
-      prodaction: {},
+      resources: {},
+      prodaction: {}
     };
   },
   created() {
-    this.getData();
+    this.getResources();
+    this.getProdaction();
   },
   methods: {
-    getData() {
-      this.prodaction = Data;
-    }
+    getResources() {
+      this.resources = Resources;
+    },
+    getProdaction() {
+      this.prodaction = Prodaction;
+    },
   },
 };
 </script>
