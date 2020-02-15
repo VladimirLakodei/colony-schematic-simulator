@@ -11,4 +11,16 @@ export default {
             ru: 'доска'
         },
     },
+    stone: {
+        name: {
+            en: 'stone',
+            ru: 'камень'
+        },
+    },
+    meat: {
+        name: {
+            en: 'meat',
+            ru: 'мясо'
+        },
+    },
 }

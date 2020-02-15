@@ -2,6 +2,7 @@
   <li class="production__element">
     <h3 class="production__name">{{prodaction.name[language]}} (0)</h3>
     <div class="production__panel">
+      <!-- if item = 0 make it disabled -->
       <button class="production__control" @click="remove">-</button>
       <div class="production__inner">
         <img class="production__image" :src="image" :alt="prodaction.name[language]" />
@@ -10,6 +11,7 @@
         :prodaction="prodaction" 
         :language="language" />
       </div>
+      <!-- not enough resources make it disabled -->
       <button class="production__control" @click="add">+</button>
     </div>
   </li>
@@ -17,6 +19,7 @@
 
 <script>
 import Information from "./Information.vue";
+import production from '../../../scripts/game/production.js';
 
 export default {
   name: "Item",
@@ -54,9 +57,11 @@ export default {
   methods: {
     add() {
       console.log("add");
+      production.add(this.prodaction.id);
     },
     remove() {
       console.log("remove");
+      production.remove(this.prodaction.id);
     }
   }
 };

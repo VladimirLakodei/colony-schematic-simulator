@@ -1,6 +1,6 @@
 export default {
     resources: {
-        log: 1000,
-        board: 2000,
+        log: 500,
+        board: 1000,
     }
 }
