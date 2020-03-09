@@ -10,9 +10,15 @@ export default class Game {
     }
 
     start() {
+        const timeStart = Date.now();
         production.init();
         controller.startTick();
         console.log('Game is start!');
-        controller.stopTick();
+        // controller.stopTick();
+        // setTimeout(()=>{
+        //     controller.stopTick();
+        // }, 4010);
+        const timeFinish = Date.now();
+        console.log(`Game start time: ${timeFinish - timeStart}ms`);
     }
 }

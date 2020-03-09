@@ -11,7 +11,7 @@
 <script>
 import Item from "./Item.vue";
 import Resources from "../../../assets/data/resources.js";
-import Prodaction from "../../../assets/data/production.js";
+import Prodaction from "../../../scripts/game/production.js";
 
 export default {
   name: "Production",
@@ -39,7 +39,7 @@ export default {
       this.resources = Resources;
     },
     getProdaction() {
-      this.prodaction = Prodaction;
+      this.prodaction = Prodaction.information;
     },
   },
 };

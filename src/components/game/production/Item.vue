@@ -1,6 +1,6 @@
 <template>
   <li class="production__element">
-    <h3 class="production__name">{{prodaction.name[language]}} (0)</h3>
+    <h3 class="production__name">{{prodaction.name[language]}} ({{prodaction.item}})</h3>
     <div class="production__panel">
       <!-- if item = 0 make it disabled -->
       <button class="production__control" @click="remove">-</button>

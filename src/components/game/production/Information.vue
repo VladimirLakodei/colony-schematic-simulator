@@ -16,7 +16,11 @@
         </div>
       </div>
       <div class="production__availability">
-        Availability: 0
+        <h4 class="information__title">Availability:</h4>
+        <span v-text="prodaction.resources"></span>
+        <!-- <ul>
+          <li v-for="(item, index) in prodaction.resources" :key="index">{{information(item, index)}}</li>
+        </ul> -->
       </div>
     </div>
     <div class="information___dynamic">
