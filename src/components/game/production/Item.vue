@@ -19,6 +19,8 @@
 
 <script>
 import Information from "./Information.vue";
+
+// do not import production (just set even to parent component)
 import production from '../../../scripts/game/production.js';
 
 export default {
