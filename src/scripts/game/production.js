@@ -75,20 +75,28 @@ class Production {
     do() {
         for (let key in this._items) {
             const item = this._items[key];
+            const consumption = productionData[key].consumption;
 
             if (item > 0) {
                 const product = productionData[key].product;
                 const resources = {};
-                // let resources = 0;
+
+                for (let key in consumption) {
+                    if (this._resources[key] < consumption[key]*item) {
+                        return
+                    }
+                }
+
+                for (let key in consumption) {
+                    this._resources[key] -= consumption[key]*item;
+                }
 
                 for (let key in product) {
                     this._resources[key] += (product[key]*item);
                     resources[key] = this._resources[key];
-                    // resources = this._resources[key];
                 }
 
                 this._information[key].resources = resources;
-                console.log('information[key]resources', resources);
             }
         }
 
@@ -100,8 +108,8 @@ class Production {
         storage.resources = this._resources;
     }
 
-    add(id) {
-        const cost = productionData[id].cost;
+    add(item) {
+        const cost = productionData[item].cost;
 
         for (let key in cost) {
             console.log('this._resources[key]', this._resources[key]);
@@ -117,8 +125,8 @@ class Production {
             this._resources[key] -= cost[key];
         }
 
-        this._items[id]++;
-        this._information[id].item = this._items[id];
+        this._items[item]++;
+        this._information[item].item = this._items[item];
 
         storage.production = this._items;
         storage.resources = this._resources;

@@ -1,7 +1,7 @@
 <template>
   <div class="information">
-    <div class="information___general">
-      <div class="information___static">
+    <div class="information__general">
+      <div class="information__static">
         <div class="information__cost">
           <h4 class="information__title">Cost:</h4>
           <ul>
@@ -22,7 +22,7 @@
         </ul>
       </div>
     </div>
-    <div class="information___dynamic">
+    <div class="information__dynamic">
       <div class="production__consumption">consumption 0</div>
       <div class="production__product">product 0</div>
     </div>
@@ -68,14 +68,14 @@ export default {
   border-left: 1px solid #000;
 }
 
-.information___general {
+.information__general {
   display: flex;
   flex: 1;
   padding: 10px;
   border-bottom: 1px solid #000;
 }
 
-.information___static {
+.information__static {
   flex: 1;
 }
 
@@ -87,7 +87,7 @@ export default {
   margin: 0 0 10px 0;
 }
 
-.information___dynamic {
+.information__dynamic {
   padding: 10px;
 }
 </style>
