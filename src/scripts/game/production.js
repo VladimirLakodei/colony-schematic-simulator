@@ -11,20 +11,23 @@ class Production {
     }
 
     init() {
-        this.initItems();
         this.initResources();
-        
-        console.log('this._information', this._information);
+        this.initItems();
     }
 
     // code duplication initResources()
     initItems() {
-        console.log('this._information', this._information);
-
         for (let key in productionData) {
             this._items[key] = 0;
             this._information[key].item = 0;
-            this._information[key].resources = 0;
+
+            const resources = {};
+
+            for (let resource in this._information[key].product) {
+                resources[resource] = this._resources[resource];
+            }
+
+            this._information[key].resources = resources;
         }
 
         const storageProduction = storage.production;
@@ -44,8 +47,6 @@ class Production {
 
             storage.production = this._items;
         }
-
-        console.log(this._items);
     }
 
     // code duplication initItems()
@@ -69,8 +70,6 @@ class Production {
 
             storage.resources = this._resources;
         }
-
-        console.log(this._resources);
     }
 
     do() {
@@ -79,20 +78,17 @@ class Production {
 
             if (item > 0) {
                 const product = productionData[key].product;
-                // const resources = {};
-                let resources = 0;
-
-                console.log('product', product);
+                const resources = {};
+                // let resources = 0;
 
                 for (let key in product) {
                     this._resources[key] += (product[key]*item);
-                    // resources[key] = this._resources[key];
-                    resources = this._resources[key];
+                    resources[key] = this._resources[key];
+                    // resources = this._resources[key];
                 }
 
-                // this._information[key].resources = resources;
                 this._information[key].resources = resources;
-                // console.log('information[key]resources', resources);
+                console.log('information[key]resources', resources);
             }
         }
 
@@ -115,7 +111,6 @@ class Production {
                 console.log('this._resources[key] < cost[key]');
                 return
             }
-
         }
 
         for (let key in cost) {
@@ -124,9 +119,6 @@ class Production {
 
         this._items[id]++;
         this._information[id].item = this._items[id];
-
-        console.log(this._items);
-        console.log(this._resources);
 
         storage.production = this._items;
         storage.resources = this._resources;
