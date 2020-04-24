@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     image() {
-      return require(`../../../assets/images/production/${this.prodaction.image}`);
+      return require(`@/assets/images/production/${this.prodaction.image}`);
     },
     information() {
       return (item, index) => {

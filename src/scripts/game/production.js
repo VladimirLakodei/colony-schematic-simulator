@@ -100,12 +100,22 @@ class Production {
             }
         }
 
+        this.updateProductionResource();
+
         console.log(this._items);
         console.log(this._resources);
         console.log(this._information);
 
         storage.production = this._items;
         storage.resources = this._resources;
+    }
+
+    updateProductionResource() {
+        for (let key in this._information) {
+            for (let resource in this._information[key].resources) {
+                this._information[key].resources[resource] = this._resources[resource];
+            }
+        }
     }
 
     add(item) {
