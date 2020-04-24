@@ -21,7 +21,7 @@
 import Information from "./Information.vue";
 
 // do not import production (just set even to parent component)
-import production from '../../../scripts/game/production.js';
+// import production from '@/scripts/game/production.js';
 
 export default {
   name: "Item",
@@ -58,12 +58,10 @@ export default {
   created() {},
   methods: {
     add() {
-      console.log("add");
-      production.add(this.prodaction.id);
+      this.$parent.$emit('add', this.prodaction.id);
     },
     remove() {
-      console.log("remove");
-      production.remove(this.prodaction.id);
+      this.$parent.$emit('remove', this.prodaction.id);
     }
   }
 };

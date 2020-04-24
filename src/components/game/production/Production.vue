@@ -10,8 +10,8 @@
 
 <script>
 import Item from "./Item.vue";
-import Resources from "../../../assets/data/resources.js";
-import Prodaction from "../../../scripts/game/production.js";
+import Resources from "@/assets/data/resources.js";
+import Prodaction from "@/scripts/game/production.js";
 
 export default {
   name: "Production",
@@ -33,6 +33,15 @@ export default {
   created() {
     this.getResources();
     this.getProdaction();
+  },
+  mounted() {
+    this.$on('add', (item) => {
+      Prodaction.add(item);
+    });
+
+    this.$on('remove', (item) => {
+      Prodaction.remove(item);
+    });
   },
   methods: {
     getResources() {

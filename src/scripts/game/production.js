@@ -73,6 +73,8 @@ class Production {
     }
 
     do() {
+        const timeStart = Date.now();
+
         for (let key in this._items) {
             const item = this._items[key];
             const consumption = productionData[key].consumption;
@@ -108,6 +110,9 @@ class Production {
 
         storage.production = this._items;
         storage.resources = this._resources;
+
+        const timeFinish = Date.now();
+        console.log(`Production do time: ${timeFinish - timeStart}ms`);
     }
 
     updateProductionResource() {
