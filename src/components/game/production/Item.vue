@@ -1,14 +1,14 @@
 <template>
   <li class="production__element">
-    <h3 class="production__name">{{prodaction.name[language]}} ({{prodaction.item}})</h3>
+    <h3 class="production__name">{{production.name[language]}} ({{production.item}})</h3>
     <div class="production__panel">
       <!-- if item = 0 make it disabled -->
       <button class="production__control" @click="remove">-</button>
       <div class="production__inner">
-        <img class="production__image" :src="image" :alt="prodaction.name[language]" />
+        <img class="production__image" :src="image" :alt="production.name[language]" />
         <Information 
         :resources="resources"
-        :prodaction="prodaction" 
+        :production="production"
         :language="language" />
       </div>
       <!-- not enough resources make it disabled -->
@@ -33,7 +33,7 @@ export default {
       type: Object,
       required: true
     },
-    prodaction: {
+    production: {
       type: Object,
       required: true
     },
@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     image() {
-      return require(`../../../assets/images/production/${this.prodaction.image}`);
+      return require(`../../../assets/images/production/${this.production.image}`);
     },
     information() {
       return (item, index) => {
@@ -58,10 +58,10 @@ export default {
   created() {},
   methods: {
     add() {
-      this.$parent.$emit('add', this.prodaction.id);
+      this.$parent.$emit('add', this.production.id);
     },
     remove() {
-      this.$parent.$emit('remove', this.prodaction.id);
+      this.$parent.$emit('remove', this.production.id);
     }
   }
 };

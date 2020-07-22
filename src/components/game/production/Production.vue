@@ -1,8 +1,8 @@
 <template>
   <ul class="production">
-    <Item v-for="item in prodaction" 
+    <Item v-for="item in production"
       :resources="resources"
-      :prodaction="item" 
+      :production="item"
       :language="language" 
       :key="item.id" />
   </ul>
@@ -11,7 +11,7 @@
 <script>
 import Item from "./Item.vue";
 import Resources from "@/assets/data/resources.js";
-import Prodaction from "@/scripts/game/production.js";
+import Production from "@/scripts/game/production.js";
 
 export default {
   name: "Production",
@@ -27,28 +27,28 @@ export default {
   data() {
     return {
       resources: {},
-      prodaction: {}
+      production: {}
     };
   },
   created() {
     this.getResources();
-    this.getProdaction();
+    this.getProduction();
   },
   mounted() {
     this.$on('add', (item) => {
-      Prodaction.add(item);
+      Production.add(item);
     });
 
     this.$on('remove', (item) => {
-      Prodaction.remove(item);
+      Production.remove(item);
     });
   },
   methods: {
     getResources() {
       this.resources = Resources;
     },
-    getProdaction() {
-      this.prodaction = Prodaction.information;
+    getProduction() {
+      this.production = Production.information;
     },
   },
 };

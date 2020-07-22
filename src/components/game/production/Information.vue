@@ -5,20 +5,20 @@
         <div class="information__cost">
           <h4 class="information__title">Cost:</h4>
           <ul>
-            <li v-for="(item, index) in prodaction.cost" :key="index">{{information(item, index)}}</li>
+            <li v-for="(item, index) in production.cost" :key="index">{{information(item, index)}}</li>
           </ul>
         </div>
         <div class="information__sale">
           <h4 class="information__title">Sale:</h4>
           <ul>
-            <li v-for="(item, index) in prodaction.sale" :key="index">{{information(item, index)}}</li>
+            <li v-for="(item, index) in production.sale" :key="index">{{information(item, index)}}</li>
           </ul>
         </div>
       </div>
       <div class="production__availability">
         <h4 class="information__title">Availability:</h4>
         <ul>
-          <li v-for="(item, index) in prodaction.resources" :key="index">{{information(item, index)}}</li>
+          <li v-for="(item, index) in production.resources" :key="index">{{information(item, index)}}</li>
         </ul>
       </div>
     </div>
@@ -37,7 +37,7 @@ export default {
       type: Object,
       required: true
     },
-    prodaction: {
+    production: {
       type: Object,
       required: true
     },
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     image() {
-      return require(`@/assets/images/production/${this.prodaction.image}`);
+      return require(`@/assets/images/production/${this.production.image}`);
     },
     information() {
       return (item, index) => {
