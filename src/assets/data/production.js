@@ -39,5 +39,27 @@ export default {
             ru: 'лесопилка'
         },
         id: 'sawmill'
+    },
+    stone_pit: {
+        cost: {
+            board: 900,
+            log: 200
+        },
+        sale: {
+            board: 200,
+            log: 50
+        },
+        consumption: {
+    
+        },
+        product: {
+            stone: 30
+        },
+        image: 'stone_pit.jpg',
+        name: {
+            en: 'stone-pit',
+            ru: 'каменоломня'
+        },
+        id: 'stone_pit'
     }
 }

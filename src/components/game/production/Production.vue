@@ -26,13 +26,9 @@ export default {
   },
   data() {
     return {
-      resources: {},
-      production: {}
+      resources: Resources,
+      production: Production.information
     };
-  },
-  created() {
-    this.getResources();
-    this.getProduction();
   },
   mounted() {
     this.$on('add', (item) => {
@@ -42,14 +38,6 @@ export default {
     this.$on('remove', (item) => {
       Production.remove(item);
     });
-  },
-  methods: {
-    getResources() {
-      this.resources = Resources;
-    },
-    getProduction() {
-      this.production = Production.information;
-    },
   },
 };
 </script>
